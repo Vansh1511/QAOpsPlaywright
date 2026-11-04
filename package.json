@@ -1,0 +1,21 @@
+{
+  "name": "playwright_2026",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "regression": "npx playwright test",
+    "webTests": "npx playwright test --grep @Web --headed",
+    "APITests": "npx playwright test --grep @API"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.4",
+    "allure": "^3.22.1",
+    "allure-playwright": "^3.14.0"
+  }
+}

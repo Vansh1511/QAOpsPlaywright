@@ -1,0 +1,10 @@
+#6960eac0c941646b7a8b3e68
+createOrder: {
+  productId: '#6960eac0c941646b7a8b3e68',
+  productName: 'ZARA COAT 3',
+  price: '$11500',
+  quantity: '1',
+  status: 'Created'
+}
+productId: #6960eac0c941646b7a8b3e68
+orderId: 6ae0872ca90a419aa82dda8e
