@@ -1,9 +1,18 @@
-name: Playwright Tests
+name: Playwright CI Pipeline
 on:
   push:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  workflow_dispatch:
+    inputs:
+      test_tag:
+        description: 'Select which test suite to execute'
+        required : true
+        type: choice
+       options:
+            - '@Smoke'
+            - '@Regression'
 jobs:
   test:
     timeout-minutes: 60
@@ -17,8 +26,8 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: npx playwright test tests/e2e.spec.js
+    - name: Run Selected Test Suite
+      run: npx playwright test --grep "$({inputs.test_tag})"
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
