@@ -1,6 +1,6 @@
 const {test,expect} =require('@playwright/test');
 
-test('Verify Login',async ({page}) =>{
+test('@Smoke Verify Login',async ({page}) =>{
    await page.goto("https://demowebshop.tricentis.com/login")
    await page.locator("#Email").fill("testdemo191@gmail.com")
    await page.locator("#Password").fill("Test@12345")
